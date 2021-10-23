@@ -58,7 +58,7 @@ async function connect() {
     const netId = await web3.eth.net.getId();
     if (netId !== networks[network]) {
         console.log('Found different network: ' + netId + ',needed ' + networks[network])
-        await switchNetwork();
+        await switchNetwork(network);
     } else {
         const accounts = await web3.eth.getAccounts();
         if (accounts.length > 0) {
