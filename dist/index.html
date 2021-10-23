@@ -2,13 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Universal Minting Button for Web2</title>
+    <title>Universal Mint Button for Web2</title>
     <script src="https://unpkg.com/lodash@4.17.20"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <style>body, input, button{font-family: 'Zen Kurenaido', sans-serif; font-size:22px;} input{font-size:22px; width: 120px;}</style>
   </head>
-  <body>
+  <body style="text-align:center">
+    <h1>Universal Mint Button</h1>
+    <p>Paste a line of code, include a single javascript file and the ABI.<br>Let's the magic happen.</p>
+    <img src="https://media2.giphy.com/media/1kTHYEtLiLB1wUBwCS/giphy.gif?cid=ecf05e47z7lkhr05v8t5ze43h1f21ia8kthfdrp36xzjl7nq&rid=giphy.gif&ct=g" width="20%"><br><br>
+    Now minting at<br><b>0x324ecF8184D84AD7b8687b2130eC82ac0D3af3ab</b><br> with <b>Polygon</b> network using <b>buyNFT</b> method<br><br>
     <input type="number" id="amount-input" value="1">
-    <button id="um-button" network="ganache" method="buyNFT" price="0.001" amount="amount-input" infura="57d9ea9ca92a4449933c2b7d7145187d" contract="0x7f7c106206E40f79C77dE60522d88b04C6bBfcF7">CONNECT WALLET</button>
-    <script src="abi.js"></script>
-    <script src="main.js"></script>
+    <button id="um-button" network="polygon" method="buyNFT" price="50" amount="amount-input" infura="57d9ea9ca92a4449933c2b7d7145187d" contract="0x324ecF8184D84AD7b8687b2130eC82ac0D3af3ab">CONNECT WALLET</button>
+    <script>
+      const ABI = [
+          {
+            "inputs": [],
+            "name": "buyNFT",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function",
+            "payable": true
+          }
+      ]
+    </script>
+    <script src="./umb.min.js"></script>
   </body>
 </html>

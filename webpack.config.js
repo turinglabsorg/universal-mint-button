@@ -6,7 +6,7 @@ module.exports = {
   mode: "production",
   performance: { hints: false },
   output: {
-    filename: 'main.js',
+    filename: 'umb.min.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
